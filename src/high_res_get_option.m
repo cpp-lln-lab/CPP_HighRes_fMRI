@@ -17,7 +17,9 @@ function opt = high_res_get_option()
 
   opt.task = 'visualLocalizerFingerTapping';
 
-  opt.model.file = 'model_smdl.json';
+  opt.ses = '007';
+
+  opt.model.file = 'visualLocalizerFingerTapping_model_smdl.json';
 
   %% DO NOT TOUCH
   opt = checkOptions(opt);

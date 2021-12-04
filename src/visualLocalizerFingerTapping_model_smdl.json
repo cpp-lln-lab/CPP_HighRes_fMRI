@@ -1,0 +1,44 @@
+{
+  "Name": "visual Localizer Finger Tapping",
+  "Description": "contrasts to compute visual localizer and finger tapping experiment",
+  "Input": {
+    "task": "visualLocalizerFingerTapping"
+  },
+  "Steps": [
+    {
+      "Level": "subject",
+      "Transformations": [
+        {
+          "Name": "Factor",
+          "Inputs": ["trial_type"]
+        },
+        {
+          "Name": "Convolve",
+          "Model": "spm",
+          "Inputs": [
+            "trial_type.motion", "trial_type.static"
+          ]
+        }
+      ],
+      "Model": {
+        "X": [
+          "trial_type.motion",
+          "trial_type.static",
+          "trans_x", "trans_y", "trans_z", "rot_x", "rot_y", "rot_z"
+        ],
+        "Options": {
+          "high_pass_filter_cutoff_secs": 128
+        },
+        "Software": {
+          "SPM": {
+            "whitening": "AR(1)"
+          }
+        },
+        "Mask": ""
+      },
+      "AutoContrasts": [
+        "trial_type.motion",
+        "trial_type.static"]
+    }
+  ]
+}
