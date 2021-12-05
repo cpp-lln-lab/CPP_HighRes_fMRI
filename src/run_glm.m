@@ -1,3 +1,5 @@
+% (C) Copyright 2021 CPP_High-Res_fMRI developers
+
 clear;
 
 run ../lib/CPP_SPM/initCppSpm.m;
@@ -23,7 +25,7 @@ input_dir = opt.derivativesDir;
 output_dir = fullfile(opt.derivativesDir, [ 'sub-pilot001/ses-' opt.ses '/func' ]);
 
 stats_dir = fullfile(opt.derivativesDir, 'sub-pilot001', ['stats_submill_' contrast]);
-
+s
 opt.model.file = fullfile(pwd, opt.model.file);
 
 %% --- run

@@ -1,4 +1,4 @@
-% (C) Copyright 2021 CPP_SPM developers
+% (C) Copyright 2021 CPP_High-Res_fMRI developers
 % Adapted from Renzo Huber's scripts
 
 clear;

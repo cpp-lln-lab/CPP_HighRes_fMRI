@@ -1,3 +1,5 @@
+% (C) Copyright 2021 CPP_High-Res_fMRI developers
+
 function [t_vaso, t_bold] = resample_events_tsv(tsvFile)
 
   close all;
