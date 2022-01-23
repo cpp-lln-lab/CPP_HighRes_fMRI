@@ -43,7 +43,7 @@ For instructions see the following links:
 
 | Dependencies                                                                              | Used version |
 | ----------------------------------------------------------------------------------------- | ------------ |
-| [Matlab](https://www.mathworks.com/products/matlab.html)                                  | 20???        |
+| [Matlab](https://www.mathworks.com/products/matlab.html)                                  | 2017b        |
 | or [octave](https://www.gnu.org/software/octave/)                                         | 4.?          |
 | [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/)                                | v7487        |
 | [CPP_SPM](https://github.com/cpp-lln-lab/CPP_SPM)*                                        | > 1.1.3      |

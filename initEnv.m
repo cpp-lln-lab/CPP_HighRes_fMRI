@@ -99,7 +99,6 @@ end
 function addDependencies()
 
     pth = fileparts(mfilename('fullpath'));
-    addpath(genpath(fullfile(pth, 'lib')));
     addpath(genpath(fullfile(pth, 'src')));
 
 end
