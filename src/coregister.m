@@ -3,7 +3,9 @@
 clear;
 clc;
 
-run ../lib/CPP_SPM/initCppSpm.m;
+addpath('../../../srcHighRes')
+
+run ../../CPP_SPM/initCppSpm.m;
 
 %% --- parameters
 
@@ -14,7 +16,7 @@ opt = high_res_get_option();
 
 %% coregisterMP2RAGEToT1w
 
-derivativesDir = '/Users/barilari/Desktop/data_temp/Marco_HighRes/derivatives/cpp_spm';
+derivativesDir =   opt.derivativesDir;
 
 derivatives = bids.layout(derivativesDir, use_schema);
 
@@ -33,14 +35,13 @@ other = bids.query(derivatives, 'data', ...
 T1w = bids.query(derivatives, 'data', ...
                  'sub', opt.subLabel, ...
                  'suffix', 'T1w', ...
-                 'prefix', 'm', ...
                  'extension', '.nii');
  
-% %% coregisterMp2rageToT1w
-% matlabbatch = {};
-% matlabbatch = setBatchCoregistration(matlabbatch, T1w{1}, MP2RAGE{1}, other);
-% batchName = 'coregisterMp2rageToT1w';
-% saveAndRunWorkflow(matlabbatch, batchName, opt, opt.subLabel);
+%% coregisterMp2rageToT1w
+matlabbatch = {};
+matlabbatch = setBatchCoregistration(matlabbatch, T1w{1}, MP2RAGE{1}, other);
+batchName = 'coregisterMp2rageToT1w';
+saveAndRunWorkflow(matlabbatch, batchName, opt, opt.subLabel);
 
 %% coregisterVasoToT1w
 % and also bold and fake T1
