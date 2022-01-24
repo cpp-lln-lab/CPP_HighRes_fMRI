@@ -4,7 +4,9 @@
 clear;
 clc;
 
-run ../lib/CPP_SPM/initCppSpm.m;
+addpath('../../../srcHighRes')
+
+run ../../CPP_SPM/initCppSpm.m;
 
 %% --- parameters
 

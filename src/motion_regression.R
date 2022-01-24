@@ -2,7 +2,7 @@ library('ggplot2')
 library('gridExtra')
 library('tidyverse')
 
-mocoPath <- '/Users/barilari/Desktop/data_temp/Marco_HighRes/derivatives/cpp_high-res_fmri/sub-pilot001/ses-007/func'
+mocoPath <- '/Users/barilari/Desktop/data_temp/Marco_HighRes_new/derivatives/cpp_high-res_fmri/sub-pilot001/ses-008/func'
 
 vasoFiles <- list.files(path = mocoPath, pattern = "vaso.txt$")
 
