@@ -34,8 +34,7 @@ git submodule update --init --recursive
 
 ### Dependencies
 
-Make sure that the following toolboxes are installed
-path.
+Make sure that the following toolboxes and softwares are installed.
 
 For instructions see the following links:
 
