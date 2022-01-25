@@ -2,7 +2,9 @@
 
 clear;
 
-run ../lib/CPP_SPM/initCppSpm.m;
+addpath('../../../srcHighRes')
+
+run ../../CPP_SPM/initCppSpm.m;
 
 %% --- parameters
 
@@ -25,7 +27,7 @@ input_dir = opt.derivativesDir;
 output_dir = fullfile(opt.derivativesDir, [ 'sub-pilot001/ses-' opt.ses '/func' ]);
 
 stats_dir = fullfile(opt.derivativesDir, 'sub-pilot001', ['stats_submill_' contrast]);
-s
+
 opt.model.file = fullfile(pwd, opt.model.file);
 
 %% --- run
