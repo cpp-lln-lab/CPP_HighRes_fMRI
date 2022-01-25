@@ -41,12 +41,14 @@ For instructions see the following links:
 
 <!-- lint disable -->
 
-| Dependencies                                                                              | Used version |
-| ----------------------------------------------------------------------------------------- | ------------ |
-| [Matlab](https://www.mathworks.com/products/matlab.html)                                  | 2017b        |
-| or [octave](https://www.gnu.org/software/octave/)                                         | 4.?          |
-| [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/)                                | v7487        |
-| [CPP_SPM](https://github.com/cpp-lln-lab/CPP_SPM)*                                        | > 1.1.3      |
+| Dependencies                                                                              | Used version         |
+| ----------------------------------------------------------------------------------------- | ---------------------|
+| [Matlab](https://www.mathworks.com/products/matlab.html)                                  | 2017b                |
+| or [octave](https://www.gnu.org/software/octave/)                                         | 4.?                  |
+| [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/)                                | v7487                |
+| [CPP_SPM](https://github.com/cpp-lln-lab/CPP_SPM)*                                        | > 1.1.3              |
+| [Afni](https://afni.nimh.nih.gov/)                                                        | AFNI_21.2.00 'Nerva' |
+| [LayNii](https://github.com/layerfMRI/LAYNII)                                             |  2.2.0               |
 
 \*already "installed" in [template_datalad_fMRI](https://github.com/cpp-lln-lab/template_datalad_fMRI) and cloned locally
 
