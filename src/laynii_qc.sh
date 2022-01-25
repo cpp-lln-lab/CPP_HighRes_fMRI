@@ -20,7 +20,7 @@
 
 file_list=$(find "${output_dir}" -name "tempco*.nii")
 
-echo "${file_list}"[1]
+echo "${file_list}"
 
 for input_file in ${file_list}
 do
