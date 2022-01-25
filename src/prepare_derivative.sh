@@ -17,7 +17,7 @@ for input_file in ${input_files}; do
     cp -v "${input_file}" "${output_file}"
 
     ## remove 4 dummies cause we are not in steady state just yet
-    $HOME/abin/3dTcat -prefix "${output_file}" \
+    $afni/3dTcat -prefix "${output_file}" \
         "${output_file}"'['$nb_dummies'..$]' \
         -overwrite
 
