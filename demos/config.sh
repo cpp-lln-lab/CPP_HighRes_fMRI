@@ -1,17 +1,23 @@
 #!/bin/bash
 
-input_dir=/Users/barilari/Desktop/data_temp/Marco_HighRes/raw/sub-pilot001/ses-007/func
+# set paths for data
+input_dir=../inputs/raw/sub-xxx/ses-xxx/func
 
-output_dir=/Users/barilari/Desktop/data_temp/Marco_HighRes/derivatives/cpp_high-res_fmri/sub-pilot001/ses-007/func
+output_dir=../outputs/derivatives/cpp_high-res_fmri/sub-pilotxxx/ses-xxx/func
 
+# set paths for the softwares (if not already exported by default in .bash_profife or .bashrc)
 afni=$HOME/abin
-laynii=$HOME/data/tools/LAYNII
+laynii=$HOME/LAYNII
+cpp_highres_fmri=./lib/CPP_High-Res_fMRI/src
 
-sub_label="pilot001"
+# set dataset to analyses information
+sub_label=""
 
-task="visualLocalizerFingerTapping"
+task=""
 
-ses=7
+nb_runs=
+
+ses=
 
 nb_dummies=4
 bold_tr=2.25
