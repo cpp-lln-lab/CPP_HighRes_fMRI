@@ -1,13 +1,25 @@
 import numpy as np
+import pandas as pd
 
 boldTR = 2.25
 vasoTR = 1.6
 
-mockEventsStarts = [5.064472,	35.536482,	65.939492,	96.094513,	126.47973,	156.608455,	187.015942]
+eventsTsv = pd.read_table('/Users/barilari/data/temp_to_delete/ses-007_bold-classic-noInterp/derivatives/cpp_spm-preproc/sub-pilot001/ses-007/func/sub-pilot001_ses-007_task-visualLocalizerFingerTapping_run-001_events.tsv', sep='\t', header=0)
 
-mockDuration = [28.336928, 28.277807, 28.032229, 28.262789,	28.009508, 28.284508, 28.017616] 
+end = np.add(eventsTsv["onset"], eventsTsv["duration"])
 
-mockTrialType = [ 'static', 'motion' ] * len(mockEventsStarts)
+eventsTsv["end"] = end
+
+
+
+
+# -------------------------------------------------------------------------------------
+
+# mockEventsStarts = [5.064472,	35.536482,	65.939492,	96.094513,	126.47973,	156.608455,	187.015942]
+
+# mockDuration = [28.336928, 28.277807, 28.032229, 28.262789,	28.009508, 28.284508, 28.017616] 
+
+# mockTrialType = [ 'static', 'motion' ] * len(mockEventsStarts)
 
 mockEventsEnd = np.add(mockEventsStarts, mockDuration)
 
