@@ -32,7 +32,7 @@ for file in files:
 
     volumeEvents = [0]
 
-    for iVol in volumeIdx:
+    for iVol in volumeIdx[0:-1]:
 
         print(iVol)
 
@@ -44,36 +44,44 @@ for file in files:
 
             volumeEvents.append(round(volumeEvents[iVol - 1] + boldTR, 2))
 
-        print(volumeEvents)
-
         volumeType = []
 
         iTime = 0
 
-        for iVol in range(len(volumeIdx)):
+    for iVol in range(len(volumeIdx)):
 
-            if volumeEvents[iVol] < offset[iTime]:
+        if volumeEvents[iVol] < offset[iTime]:
 
-                volumeType.append(eventsTsv["trial_type"][iTime])
+            volumeType.append(eventsTsv["trial_type"][iTime])
 
-            else:
+        else:
 
-                iTime = iTime + 1
+            iTime = iTime + 1
 
-                volumeType.append(eventsTsv["trial_type"][iTime])
+            volumeType.append(eventsTsv["trial_type"][iTime])
 
-    print(
-        "{} within {} then {}".format(
-            volumeEvents[iVol], offset[iTime], eventsTsv["trial_type"][iTime]
+        print(
+            "{} within {} then {}".format(
+                volumeEvents[iVol], offset[iTime], eventsTsv["trial_type"][iTime]
+            )
         )
+        print("volume: {}; event {}".format(iVol, iTime))
+
+    newEventsTsv = pd.DataFrame(
+        {
+            "volumeIdx": volumeIdx,
+            "trial_type": volumeType,
+            "sequence": volumeList,
+            "comulativeTR": volumeEvents,
+        }
     )
-    print("volume: {}; event {}".format(iVol, iTime))
-# -------------------------------------------------------------------------------------
 
-# mockEventsStarts = [5.064472,	35.536482,	65.939492,	96.094513,	126.47973,	156.608455,	187.015942]
+    print(newEventsTsv)
 
-# mockDuration = [28.336928, 28.277807, 28.032229, 28.262789,	28.009508, 28.284508, 28.017616]
+    fileName = os.path.splitext(file)[0]
 
-# mockTrialType = [ 'static', 'motion' ] * len(mockEventsStarts)
+    newFileName = fileName + "-volume" + ".tsv"
 
-# mockEventsEnd = np.add(mockEventsStarts, mockDuration)
+    print(newFileName)
+
+    newEventsTsv.to_csv(newFileName, sep="\t", index=False)
