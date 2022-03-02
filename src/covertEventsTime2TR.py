@@ -10,7 +10,7 @@ boldTR = 2.25
 vasoTR = 1.6
 
 # set path of the events files to convert
-path = "/Users/barilari/data/temp_to_delete/ses-007_bold-classic-noInterp/derivatives/cpp_spm-preproc/sub-pilot001/ses-007/func/"
+path = "/Users/barilari/data/temp/ses-007_grandmean/sub-pilot001/ses-007/func"
 
 # list the events files
 files = glob.glob(path + "/*events.tsv")
