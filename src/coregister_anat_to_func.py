@@ -93,7 +93,7 @@ for subject in subjectList:
         --verbose 1 \
         --dimensionality 3 \
         --float 1 \
-        --output [{path}/ANTs_, {path}/ANTs_Warped{nifti_ext},{path}/ANTs_InverseWarped{nifti_ext}] \
+        --output [{path}/rANTs_, {path}/rANTs_Warped{nifti_ext},{path}/rANTs_InverseWarped{nifti_ext}] \
         --interpolation Linear \
         --use-histogram-matching 0 \
         --winsorize-image-intensities [0.005,0.995] \
