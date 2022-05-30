@@ -17,8 +17,7 @@ opt = high_res_get_option();
 first_vol_bold = 2;
 first_vol_vaso = 1;
 
-use_schema = false;
-derivatives = bids.layout(opt.derivativesDir, use_schema);
+derivatives = bids.layout(opt.derivativesDir, 'use_schema', false);
 
 %% --- run
 
