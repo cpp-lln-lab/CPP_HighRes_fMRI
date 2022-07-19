@@ -5,19 +5,24 @@ input_files=$(find "${input_dir}" -name "*_boldcbv.nii")
 
 echo "${input_files}"
 
-# create the destination folder is it does not exists
+# create the destination folder if it does not exists
 mkdir -p $output_dir
 
 for input_file in ${input_files}; do
+    
     echo ""
     echo "processing:" "${input_file}"
     echo ""
 
+    # copy raw data into the derivatives
+    cp -vL "${input_file}" "${output_dir}"
+
     # create a tmp name
-    output_file="${input_dir}/tmp.nii"
+    output_file="${output_dir}/tmp.nii"
 
     # duplicate the func image
-    cp -v "${input_file}" "${output_file}"
+    file_name=$(basename $input_file)
+    cp -v "${output_dir}/${file_name}" "${output_file}"
 
     chmod 777 $output_file
 
@@ -27,10 +32,10 @@ for input_file in ${input_files}; do
         -overwrite
 
     # duplicate again and move into derivatives
-    output_bold=$(echo ${input_file} | sed "s/_boldcbv.nii/_bold.nii/g")
+    output_bold=$(echo ${output_dir}/${file_name} | sed "s/_boldcbv.nii/_bold.nii/g")
     cp -v "${output_file}" "${output_bold}"
     mv -v "${output_bold}" "${output_dir}"
-    output_vaso=$(echo ${input_file} | sed "s/_boldcbv.nii/_vaso.nii/g")
+    output_vaso=$(echo ${output_dir}/${file_name} | sed "s/_boldcbv.nii/_vaso.nii/g")
     cp -v "${output_file}" "${output_vaso}"
     mv -v "${output_vaso}" "${output_dir}"
 
